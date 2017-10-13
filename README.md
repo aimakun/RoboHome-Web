@@ -36,7 +36,13 @@ RoboHome is a SaaS tool that also integrates with Amazon's Echo to enable contro
 
 Docker support is currently on hold while the port to Laravel takes place.
 
-~~This project uses [Docker Compose](https://docs.docker.com/compose/) to help easily emulate a test environment for rapid development and testing.  This container has the PHP, MySQL, and phpMyAdmin services.  For login to work, you'll need to add `http://localhost` to the "Allowed JavaScript Origins" in your Login With Amazon App Console.  Once you have Docker installed and running, execute `docker-compose up` and visit `http://localhost` to view the website.  To access phpMyAdmin, navigate to `http://localhost:8183` and login with the following credentials; Server: `db`, user: `root`, password: `password`.~~
+This project uses [Docker Compose](https://docs.docker.com/compose/) to help easily emulate a test environment for rapid development and testing.  This container has the PHP, MySQL, and phpMyAdmin services.
+
+There are two things different from setup manually:
+1. Copy config in `.env.docker` file into `.env` instead of using `.env.example`
+2. `composer` and `php artisan` are preinstalled commands in Docker container, you can use via `./web.sh` script. For example: `./web.sh composer install` or `./web.sh php artisan migrate`. This script would run in container automatically 
+
+For login to work, you'll need to add `http://localhost` to the "Allowed JavaScript Origins" in your Login With Amazon App Console.  Once you have Docker installed and running, execute `docker-compose up` and visit `http://localhost` to view the website.  To access phpMyAdmin, navigate to `http://localhost:8183` and login with the following credentials; Server: `db`, user: `root`, password: `password`.
 
 ## Contributing
 
