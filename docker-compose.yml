@@ -19,6 +19,7 @@ web:
     - data
   links:
     - db
+    - chromedriver
   environment:
     MYSQL_HOST: db
 
@@ -28,3 +29,6 @@ dbadmin:
     - "8183:80"
   links:
     - db
+
+chromedriver:
+  image: wakaba/docker-chromedriver:stable
