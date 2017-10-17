@@ -34,3 +34,5 @@ dbadmin:
 
 chromedriver:
   image: wakaba/docker-chromedriver:stable
+  command: bash -c "rm -f /tmp/.X0-lock && /cd"
+  stop_signal: SIGKILL
