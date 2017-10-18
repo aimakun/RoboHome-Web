@@ -38,7 +38,7 @@ This project uses [Docker Compose](https://docs.docker.com/compose/) to help eas
 
 There are a few configuration steps that are different from the manual configuration:
 1. Rename `.env.docker` to `.env`.
-2. `composer` and `php artisan` re preinstalled commands in the Docker container that you can use via the `web.sh` script in the root directory. For example: `./web.sh composer install` to install Composer dependencies on the container or `./web.sh php artisan migrate` to run the Laravel migrations on the container. This script will run in container automatically.
+2. `composer` and `php artisan` are preinstalled commands in the Docker container that you can use via the `web.sh` script in the root directory. For example: `./web.sh composer install` to install Composer dependencies on the container or `./web.sh php artisan migrate` to run the Laravel migrations on the container. This script will run in container automatically.
 
 For login to work, you'll need to add `http://localhost` to the "Allowed JavaScript Origins" in your Login With Amazon App Console.  Once you have Docker installed and running, execute `docker-compose up` and visit `http://localhost` to view the website.  To access phpMyAdmin, navigate to `http://localhost:8183` and login with the following credentials; Server: `db`, user: `root`, password: `password`.
 
